@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #FFF8F0;
+  --rose: #E8A0BF;
+  --rose-deep: #7B3F5E;
+  --rose-dark: #5C2D44;
+  --gold: #D4A853;
+  --warm-dark: #2D1B1B;
+  --peach: #FFE4EC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-60px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0%,
+  100% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 28px;
+  }
+  75% {
+    margin-left: -28px;
+  }
+}
+
+.petal {
+  position: absolute;
+  top: -60px;
+  pointer-events: none;
+  will-change: transform;
+  animation: petalFall linear infinite, petalSway ease-in-out infinite;
+}
+
+@keyframes audioPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.audio-playing {
+  animation: audioPulse 2s ease-in-out infinite;
+}
+
+textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #e8a0bf;
+  border-radius: 4px;
+}
