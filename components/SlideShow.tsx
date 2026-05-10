@@ -162,7 +162,7 @@ export default function SlideShow() {
   ]
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full overflow-hidden" style={{ height: '100dvh' }}>
       {state.audioAvailable && (
         <AudioToggle enabled={state.audioEnabled} onToggle={toggleAudio} dark={isDark} />
       )}

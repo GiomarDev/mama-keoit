@@ -136,7 +136,7 @@ export default function Slide05Share({ userData, onReset, onBack }: Props) {
     >
       {/* Tarjeta oculta fuera de viewport — solo para html2canvas */}
       <CardDownloadable userData={userData} />
-      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-md w-full gap-7">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-md w-full gap-5 overflow-y-auto py-10" style={{ maxHeight: '100dvh' }}>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,8 +145,8 @@ export default function Slide05Share({ userData, onReset, onBack }: Props) {
           <Image
             src="/images/logo-white.jpg"
             alt="KeoIT"
-            width={72}
-            height={72}
+            width={56}
+            height={56}
             className="rounded-xl"
             style={{ mixBlendMode: 'multiply' }}
           />

@@ -19,10 +19,9 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
 
   return (
     <div
-      className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full h-full overflow-y-auto"
       style={{ background: '#FFF8F0' }}
     >
-      {/* Background decoration */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -31,7 +30,7 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center px-6 max-w-md w-full gap-8">
+      <div className="relative z-10 flex flex-col items-center px-6 py-12 max-w-md mx-auto w-full gap-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,20 +38,14 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
           className="text-center"
         >
           <h2
-            className="text-3xl sm:text-4xl font-bold"
-            style={{
-              fontFamily: 'var(--font-playfair), serif',
-              color: '#7B3F5E',
-            }}
+            className="text-2xl sm:text-4xl font-bold"
+            style={{ fontFamily: 'var(--font-playfair), serif', color: '#7B3F5E' }}
           >
             ¿A quién le dedicas
           </h2>
           <h2
-            className="text-3xl sm:text-4xl font-bold italic"
-            style={{
-              fontFamily: 'var(--font-playfair), serif',
-              color: '#7B3F5E',
-            }}
+            className="text-2xl sm:text-4xl font-bold italic"
+            style={{ fontFamily: 'var(--font-playfair), serif', color: '#7B3F5E' }}
           >
             este mensaje?
           </h2>
@@ -64,12 +57,8 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
           transition={{ delay: 0.3, duration: 0.7 }}
           className="w-full flex flex-col gap-5"
         >
-          {/* Name input */}
           <div className="flex flex-col gap-1.5">
-            <label
-              className="text-sm font-medium tracking-wide"
-              style={{ color: '#7B3F5E' }}
-            >
+            <label className="text-sm font-medium tracking-wide" style={{ color: '#7B3F5E' }}>
               Nombre de tu mamá
             </label>
             <input
@@ -91,19 +80,15 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
             </span>
           </div>
 
-          {/* Message textarea */}
           <div className="flex flex-col gap-1.5">
-            <label
-              className="text-sm font-medium tracking-wide"
-              style={{ color: '#7B3F5E' }}
-            >
+            <label className="text-sm font-medium tracking-wide" style={{ color: '#7B3F5E' }}>
               Tu mensaje para ella
             </label>
             <textarea
               value={userData.message}
               onChange={(e) => onUpdate({ message: e.target.value })}
               maxLength={150}
-              rows={4}
+              rows={3}
               placeholder="Escríbele algo desde el corazón..."
               className="w-full px-4 py-3 rounded-2xl text-base outline-none transition-all border-2 resize-none"
               style={{
@@ -138,7 +123,6 @@ export default function Slide03Personalize({ userData, onUpdate, onNext }: Props
         </motion.div>
       </div>
 
-      {/* Corner flower */}
       <div className="absolute bottom-4 right-4 opacity-30 pointer-events-none">
         <FlowerSVG size={80} color="#E8A0BF" delay={0.5} />
       </div>

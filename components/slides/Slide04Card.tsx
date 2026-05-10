@@ -21,7 +21,7 @@ export default function Slide04Card({ userData, onNext }: Props) {
         background: 'linear-gradient(160deg, #FFF8F0 0%, #FFE4EC 60%, #FFF0E8 100%)',
       }}
     >
-      <div className="relative z-10 flex flex-col items-center gap-6 px-4 w-full max-w-sm">
+      <div className="relative z-10 flex flex-col items-center gap-6 px-4 w-full max-w-sm overflow-y-auto py-8" style={{ maxHeight: '100dvh' }}>
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export default function Slide04Card({ userData, onNext }: Props) {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
-                className="text-4xl font-bold"
+                className="text-3xl sm:text-4xl font-bold break-words"
                 style={{
                   fontFamily: 'var(--font-playfair), serif',
                   color: '#7B3F5E',
